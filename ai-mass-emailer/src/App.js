@@ -31,7 +31,7 @@ function App() {
   console.log(responseContent)
   return (
     <div>
-      AI EMAIL GENERATOR
+      <h1 style={{"text-align": "center"}}>GENERATE MY MASS EMAIL</h1>
       <button type="button" onClick={handleGenerateClick}>Generate Email</button>
       <p>{responseContent.content}</p>
     </div>
