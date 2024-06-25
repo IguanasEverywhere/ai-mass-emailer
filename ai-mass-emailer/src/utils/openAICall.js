@@ -9,7 +9,6 @@ export async function getResponseContent({ messages, model, temperature }) {
       model: model,
       temperature: temperature,
     });
-    // console.log('from call', JSON.parse(completion.choices[0].message.content))
     return completion.choices[0].message;
   } catch (err) {
     return err.message;

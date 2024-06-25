@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getResponseContent } from '../../utils/openAICall';
-import requestObj from '../../utils/requestObject';
+// import requestObj from '../../utils/requestObject';
+import makeRequestObj from '../../utils/makeRequestObj';
 
 const GeneratorForm = () => {
 
@@ -11,12 +12,12 @@ const GeneratorForm = () => {
   })
 
   const handleGenerateClick = () => {
-    getResponseContent(requestObj)
+    getResponseContent(makeRequestObj(formContent.audience, formContent.topic))
       .then(r => setResponseContent(JSON.parse(r.content)));
   }
 
   const handleFormChange = (e) => {
-    setFormContent(prevVals => ({...prevVals, [e.target.name]:e.target.value}))
+    setFormContent(prevVals => ({ ...prevVals, [e.target.name]: e.target.value }))
   }
 
 
